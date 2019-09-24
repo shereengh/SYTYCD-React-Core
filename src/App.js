@@ -15,13 +15,13 @@ const instance = axios.create({
 
 class App extends Component {
   state = {
-    authors: [],
+    authors: null,
     books: [],
-    loading: true
+    loading: false
   };
 
   fetchAllAuthors = async () => {
-    const res = await instance.get("/api/authors/");
+    const res = await instance.put("/api/authors/");
     return res.data;
   };
 
